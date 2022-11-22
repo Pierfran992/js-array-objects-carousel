@@ -83,7 +83,7 @@ msNext.addEventListener('click',
             // così posso aggiungere la classe ms_active all'immagine successiva
             imgSlider[msActive].classList.add('ms_active');
 
-        } else if(msActive = imgSlider.length -1) {
+        } else {
             imgSlider[msActive].classList.remove('ms_active');
             msActive = 0;
             imgSlider[msActive].classList.add('ms_active');
@@ -106,10 +106,10 @@ msPrev.addEventListener('click',
             // così posso aggiungere la classe ms_active all'immagine precedente
             imgSlider[msActive].classList.add('ms_active');
 
-        } else if(msActive = 0) {
-            
-            msActive = msActive.length - 1;
-            
+        } else {
+            imgSlider[msActive].classList.remove('ms_active');
+            msActive = imgSlider.length -1;
+            imgSlider[msActive].classList.add('ms_active');
         }
     }
 );
