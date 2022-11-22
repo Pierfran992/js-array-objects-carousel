@@ -71,25 +71,25 @@ let msActive = 0;
 
 // creo la costante e le condizioni per il next
 let msNext = document.querySelector(".ms_next");
-
 msNext.addEventListener('click',
 
     function() {
 
-        if (msActive < imgSlider.length -1) {
+        if (msActive < imgSlider.length -1){
             // togli la classe ms_active all'immagine iniziale
             imgSlider[msActive].classList.remove('ms_active');
-
             // poi faccio incrementare msActive
-            msActive++
-
+            msActive++;
             // così posso aggiungere la classe ms_active all'immagine successiva
-            imgSlider[msActive].classList.add('ms_active')
+            imgSlider[msActive].classList.add('ms_active');
+
+        } else if(msActive = imgSlider.length -1) {
+            imgSlider[msActive].classList.remove('ms_active');
+            msActive = 0;
+            imgSlider[msActive].classList.add('ms_active');
         }
-
     }
-
-)
+);
 
 // creo la costante e le condizioni per il prev
 let msPrev = document.querySelector(".ms_prev");
@@ -98,20 +98,21 @@ msPrev.addEventListener('click',
 
     function() {
 
-        if (msActive > imgSlider.length - imgSlider.length) {
+        if (msActive > 0) {
             // togli la classe ms_active all'immagine attuale
             imgSlider[msActive].classList.remove('ms_active');
-
             // poi faccio decrementare msActive
-            msActive--
-
+            msActive--;
             // così posso aggiungere la classe ms_active all'immagine precedente
-            imgSlider[msActive].classList.add('ms_active')
+            imgSlider[msActive].classList.add('ms_active');
+
+        } else if(msActive = 0) {
+            
+            msActive = msActive.length - 1;
+            
         }
-
     }
-
-)
+);
 
 
 // FUNZIONI
