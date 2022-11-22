@@ -39,24 +39,23 @@ for (let i = 0; i < msImgSlider.length; i++) {
 
     let elemSlider = msImgSlider[i];
 
-    let msImg;
-    if (i == 0) {
-        msImg = createElement("div", "ms_img", "ms_active");
-    } else {
-        msImg = createElement("div", "ms_img");
-    }
-
+    let msImg = i == 0? createElement("div", "ms_img", "ms_active") : createElement("div", "ms_img");
+    
     let imgSld = createElement("img", "image_slider");
     imgSld.src = elemSlider.image;
     msImg.appendChild(imgSld);
 
+    let ctnTitleDesc = createElement ("div", "ctn_title_desc");
+
     let titleImg = createElement("h2", "ms_title_img");
     titleImg.innerHTML = elemSlider.title;
-    msImg.appendChild(titleImg);
+    ctnTitleDesc.appendChild(titleImg);
 
     let descImg = createElement("p", "ms_desc_img");
     descImg.innerHTML = elemSlider.text;
-    msImg.appendChild(descImg);
+    ctnTitleDesc.appendChild(descImg);
+
+    msImg.appendChild(ctnTitleDesc);
 
     msImgContainer.appendChild(msImg);
 }
