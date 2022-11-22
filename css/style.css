@@ -57,7 +57,8 @@ header img {
 }
 
 .ms_img {
-    color: #fff;
+    color: #A7D129;
+    text-align: end;
     display: none;
     position: relative;
 }
@@ -67,15 +68,18 @@ header img {
 }
 
 .ms_title_img {
+    font-size: 25px;
+    /* margin-bottom: 10px; */
     position: absolute;
     right: 10px;
-    bottom: 120px;
+    bottom: 25%;
 }
 
 .ms_desc_img {
+    font-size: 20px;
     position: absolute;
     right: 10px;
-    bottom: 100px;
+    bottom: 15%;
 }
 
 /* rules button switch slider */

@@ -39,21 +39,26 @@ for (let i = 0; i < msImgSlider.length; i++) {
 
     let elemSlider = msImgSlider[i];
 
-    let msImg = createElement("div", "ms_img");
+    let msImg;
+    if (i == 0) {
+        msImg = createElement("div", "ms_img", "ms_active");
+    } else {
+        msImg = createElement("div", "ms_img");
+    }
 
-    let img = createElement("img", "image_slider");
-    img.src = elemSlider.image;
-    elemSlider.appendChild(img);
+    let imgSld = createElement("img", "image_slider");
+    imgSld.src = elemSlider.image;
+    msImg.appendChild(imgSld);
 
-    let titleImg = createElement("h2", ".ms_title_img");
+    let titleImg = createElement("h2", "ms_title_img");
     titleImg.innerHTML = elemSlider.title;
-    elemSlider.appendChild(titleImg);
+    msImg.appendChild(titleImg);
 
     let descImg = createElement("p", "ms_desc_img");
     descImg.innerHTML = elemSlider.text;
-    elemSlider.appendChild(descImg);
+    msImg.appendChild(descImg);
 
-    msImgContainer.appendChild(elemSlider);
+    msImgContainer.appendChild(msImg);
 }
 
 
@@ -112,10 +117,11 @@ msPrev.addEventListener('click',
 
 // FUNZIONI
 // Creo la funzione per generare vari elementi con classi o id
-function createElement (typeElement, idClassElement) {
+function createElement (typeElement, idClassElement1, idClassElement2) {
     // creo l'elemento
     const element = document.createElement(typeElement);
-    element.classList.add(idClassElement);
+    element.classList.add(idClassElement1);
+    element.classList.add(idClassElement2);
 
     // ritorno l'elemento
     return element;
