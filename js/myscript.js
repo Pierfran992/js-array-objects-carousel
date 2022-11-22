@@ -39,7 +39,7 @@ for (let i = 0; i < msImgSlider.length; i++) {
 
     let elemSlider = msImgSlider[i];
 
-    let msImg = i == 0? createElement("div", "ms_img", "ms_active") : createElement("div", "ms_img");
+    let msImg = i == 0? createElementTwoClass("div", "ms_img", "ms_active") : createElement("div", "ms_img");
     
     let imgSld = createElement("img", "image_slider");
     imgSld.src = elemSlider.image;
@@ -116,12 +116,22 @@ msPrev.addEventListener('click',
 
 
 // FUNZIONI
-// Creo la funzione per generare vari elementi con classi o id
-function createElement (typeElement, idClassElement1, idClassElement2) {
+// Creo la funzione per generare vari elementi con una classe
+function createElement (typeElement, classElement1) {
     // creo l'elemento
     const element = document.createElement(typeElement);
-    element.classList.add(idClassElement1);
-    element.classList.add(idClassElement2);
+    element.classList.add(classElement1);
+
+    // ritorno l'elemento
+    return element;
+} 
+
+// Creo la funzione per generare vari elementi con due classi
+function createElementTwoClass (typeElement, classElement1, classElement2) {
+    // creo l'elemento
+    const element = document.createElement(typeElement);
+    element.classList.add(classElement1);
+    element.classList.add(classElement2);
 
     // ritorno l'elemento
     return element;
