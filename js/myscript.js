@@ -34,31 +34,30 @@ console.log(msImgSlider);
 // richiamo il container in cui inserire gli oggetti
 const msImgContainer = document.getElementById("imgContainer");
 
-// creo il ciclo for per inserire gli oggeti immagine nello slider
-for (let i = 0; i < msImgSlider.length; i++) {
-
-    let elemSlider = msImgSlider[i];
-
-    let msImg = i == 0? createElementTwoClass("div", "ms_img", "ms_active") : createElement("div", "ms_img");
+// creo il ciclo forEach per inserire gli oggeti immagine nello slider
+msImgSlider.forEach((elem, index) => 
+    {
+        let msImg = index == 0? createElementTwoClass("div", "ms_img", "ms_active") : createElement("div", "ms_img");
     
-    let imgSld = createElement("img", "image_slider");
-    imgSld.src = elemSlider.image;
-    msImg.appendChild(imgSld);
+        let imgSld = createElement("img", "image_slider");
+        imgSld.src = elem.image;
+        msImg.appendChild(imgSld);
 
-    let ctnTitleDesc = createElement ("div", "ctn_title_desc");
+        let ctnTitleDesc = createElement ("div", "ctn_title_desc");
 
-    let titleImg = createElement("h2", "ms_title_img");
-    titleImg.innerHTML = elemSlider.title;
-    ctnTitleDesc.appendChild(titleImg);
+        let titleImg = createElement("h2", "ms_title_img");
+        titleImg.innerHTML = elem.title;
+        ctnTitleDesc.appendChild(titleImg);
 
-    let descImg = createElement("p", "ms_desc_img");
-    descImg.innerHTML = elemSlider.text;
-    ctnTitleDesc.appendChild(descImg);
+        let descImg = createElement("p", "ms_desc_img");
+        descImg.innerHTML = elem.text;
+        ctnTitleDesc.appendChild(descImg);
 
-    msImg.appendChild(ctnTitleDesc);
+        msImg.appendChild(ctnTitleDesc);
 
-    msImgContainer.appendChild(msImg);
-}
+        msImgContainer.appendChild(msImg);
+
+});
 
 
 // creo la costante per richimare le immagini dello slider
