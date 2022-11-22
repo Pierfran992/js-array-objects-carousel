@@ -57,11 +57,25 @@ header img {
 }
 
 .ms_img {
+    color: #fff;
     display: none;
+    position: relative;
 }
 
 .ms_active {
     display: block;
+}
+
+.ms_title_img {
+    position: absolute;
+    right: 10px;
+    bottom: 120px;
+}
+
+.ms_desc_img {
+    position: absolute;
+    right: 10px;
+    bottom: 100px;
 }
 
 /* rules button switch slider */
