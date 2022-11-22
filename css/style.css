@@ -68,9 +68,12 @@ header img {
 }
 
 .ctn_title_desc {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 10px;
     position: absolute;
-    right: 10px;
-    bottom: 25%;
+    right: 0;
+    bottom: 15%;
 }
 
 .ms_title_img {
