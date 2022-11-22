@@ -31,30 +31,31 @@ const msImgSlider = [
     }];
 console.log(msImgSlider);
 
+// richiamo il container in cui inserire gli oggetti
 const msImgContainer = document.getElementById("imgContainer");
 
-/* // creo il ciclo for per inserire le immagini nello slider
-for (let i = 0; i < msImgSlider.length;  i++) {
-    // creo il contenitore della singola immagine
-    let imgDiv = document.createElement("div");
-    // creo le condizioni per insirerire le classi nel contenitore
-    if (i == 0) {
-        imgDiv.className = "ms_img ms_active";
-    } else {
-        imgDiv.className = "ms_img";
-    }
+// creo il ciclo for per inserire gli oggeti immagine nello slider
+for (let i = 0; i < msImgSlider.length; i++) {
 
-    // creo il tag img
-    let img = document.createElement("img");
+    let elemSlider = msImgSlider[i];
 
-    // inserisco src al tag img
-    img.src = msImgSlider[i];
+    let msImg = createElement("div", "ms_img");
 
-    // compongo l'elemento dello slider
-    imgDiv.appendChild(img);
+    let img = createElement("img", "image_slider");
+    img.src = elemSlider.image;
+    elemSlider.appendChild(img);
 
-    msImgContainer.appendChild(imgDiv);
-} */
+    let titleImg = createElement("h2", ".ms_title_img");
+    titleImg.innerHTML = elemSlider.title;
+    elemSlider.appendChild(titleImg);
+
+    let descImg = createElement("p", "ms_desc_img");
+    descImg.innerHTML = elemSlider.text;
+    elemSlider.appendChild(descImg);
+
+    msImgContainer.appendChild(elemSlider);
+}
+
 
 // creo la costante per richimare le immagini dello slider
 const imgSlider = document.getElementsByClassName("ms_img");
